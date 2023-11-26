@@ -1,12 +1,24 @@
 version: "3.9"
 services:
- dbpost:
+
+ dbpost_lab9:
   image: postgres:latest
   environment:
    POSTGRES_DB: Customers_Orders
    POSTGRES_USER: joel
    POSTGRES_PASSWORD: 1337
   volumes:
-   - "./script.sql:/docker-entrypoint-initdb.d/init.sql"
+   - "./script_lab9.sql:/docker-entrypoint-initdb.d/init.sql"
   ports:
-   - 5432:5432
+   - 5433:5432
+
+ dbpost_lab8:
+  image: postgres:latest
+  environment:
+   POSTGRES_DB: db_wholesale
+   POSTGRES_USER: joel
+   POSTGRES_PASSWORD: 1337
+  volumes:
+   - "./script_lab8.sql:/docker-entrypoint-initdb.d/init.sql"
+  ports:
+   - 5434:5432

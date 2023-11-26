@@ -7,7 +7,7 @@ create table if not exists Клиенты (
 
 create table if not exists Заказы (
 	ID_заказа serial primary key,
-	ID_клиента serial references Клиенты (ID_клиента)
+	ID_клиента serial references Клиенты (ID_клиента),
 	Дата_заказа timestamp,
 	Общая_стоимость_заказа money
 );
